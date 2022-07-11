@@ -5,25 +5,33 @@ class MyAppNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
-        ),
-        child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  MyNav(name: 'Hone'),
-                  MyNav(name: 'About'),
-                  MyNav(name: 'Pricing'),
-                  MyNav(name: 'Meals'),
-                  MyNav(name: 'Location'),
-                  MyNav(name: 'Contact'),
-                  Spacer(),
-                  Btn(name: 'Get Started'),
-                ])));
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Image.asset('assets/images/logo.png'),
+        const SizedBox(width: 40),
+        Container(
+            height: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.white,
+            ),
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      MyNav(name: 'Home'),
+                      MyNav(name: 'About'),
+                      MyNav(name: 'Pricing'),
+                      MyNav(name: 'Meals'),
+                      MyNav(name: 'Location'),
+                      MyNav(name: 'Contact'),
+                      SizedBox(width: 10),
+                      Btn(name: 'Get Started'),
+                    ]))),
+      ],
+    );
   }
 }
 
@@ -48,7 +56,7 @@ class MyNav extends StatelessWidget {
         style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: Colors.black45,
+          color: Colors.black,
         ),
       ),
     );
@@ -70,7 +78,7 @@ class Btn extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: Colors.yellowAccent),
+            color: const Color.fromARGB(255, 211, 163, 18)),
         child: Text(
           name,
           style: const TextStyle(

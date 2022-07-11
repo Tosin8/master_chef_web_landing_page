@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'Screens/appbar.dart';
+import 'Screens/buttons.dart';
+import 'Screens/body.dart';
 
 void main() {
   runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false, home: LandingPage()));
+      debugShowCheckedModeBanner: false,
+      title: 'Welcome to Master Chef',
+      home: LandingPage()));
 }
 
 class LandingPage extends StatelessWidget {
@@ -11,18 +15,19 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    final Size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Image.asset('assets/images/logo.png'),
-              const MyAppNav(),
-            ],
-          )
+        body: Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+        children: const [
+          MyAppNav(),
+          SizedBox(height: 30),
+          BodyApp(),
+          Btns(),
         ],
       ),
-    );
+    ));
   }
 }
