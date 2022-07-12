@@ -16,7 +16,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
-    final Size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.only(top: 10),
