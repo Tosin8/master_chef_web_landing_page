@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'widgets/appbar.dart';
-import 'widgets/buttons.dart';
-import 'widgets/body.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -18,17 +15,18 @@ class LandingPage extends StatelessWidget {
     // ignore: non_constant_identifier_names
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        children: const [
-          MyAppNav(),
-          SizedBox(height: 30),
-          BodyApp(),
-          Btns(),
-          SizedBox(height: 10),
-        ],
-      ),
+        body: Stack(
+      children: [
+        Container(
+          decoration: const BoxDecoration(),
+          child: Image.asset('assets/images/bkgd.jpg'),
+        ),
+        Column(
+          children: [
+            Row(),
+          ],
+        ),
+      ],
     ));
   }
 }
