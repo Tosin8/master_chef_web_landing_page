@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       title: 'Welcome to Master Chef',
-      home: LandingPage()));
+      home: const LandingPage()));
 }
 
 class LandingPage extends StatelessWidget {
@@ -13,20 +16,14 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-          decoration: const BoxDecoration(),
-          child: Image.asset('assets/images/bkgd.jpg'),
-        ),
-        Column(
-          children: [
-            Row(),
-          ],
-        ),
-      ],
-    ));
+    Size size = MediaQuery.of(context)
+        .size; // providing the total heignt and width of the screen.
+    return Container(
+      height: size.height,
+      width: size.width,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover)),
+    );
   }
 }
