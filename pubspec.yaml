@@ -32,11 +32,12 @@ flutter:
   
 assets:
   - assets/images/logo.png
-  #   - images/a_dot_ham.jpeg
+  - assets/images/bkgd.jpg
+  
 
   
 
-  # For details regarding adding assets from package dependencies, see
+
   # https://flutter.dev/assets-and-images/#from-packages
 
   # example:

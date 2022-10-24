@@ -26,7 +26,7 @@ class LandingPage extends StatelessWidget {
           SizedBox(height: 30),
           BodyApp(),
           Btns(),
-          SizedBox(height: 10), 
+          SizedBox(height: 10),
         ],
       ),
     ));
