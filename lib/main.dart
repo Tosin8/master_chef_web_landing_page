@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'Screens/appbar.dart';
-import 'Screens/buttons.dart';
-import 'Screens/body.dart';
+import 'widgets/appbar.dart';
+import 'widgets/buttons.dart';
+import 'widgets/body.dart';
 
 void main() {
   runApp(const MaterialApp(
