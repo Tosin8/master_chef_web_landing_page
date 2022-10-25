@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_chef_web_landing_page/component/landing_page/body.dart';
 
 import 'component/landing_page/appbar.dart';
 
@@ -29,8 +30,9 @@ class LandingPage extends StatelessWidget {
                 image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover),
           ),
           child: Column(
-            children: const  [
+            children: const [
               MyAppNav(),
+              BodyApp(),
             ],
           )),
     );

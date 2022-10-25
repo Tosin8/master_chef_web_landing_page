@@ -5,23 +5,24 @@ class BodyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
-        Text(
-          'We make Delicious Food',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            'We make Delicious Food',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
-        ),
-        SizedBox(height: 5),
-        Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-                'For your healthy living, master chef brings spicy receipe takes goes gently in your stomach, done by our professional chefs in our restaurants. ')),
-      ],
+          SizedBox(height: 5),
+          Text(
+              'For your healthy living, master chef brings spicy receipe takes goes gently in your stomach, \n  done by our professional chefs in our restaurants. '),
+        ],
+      ),
     );
   }
 }
