@@ -7,7 +7,7 @@ class MyAppNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Row(

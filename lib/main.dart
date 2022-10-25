@@ -19,8 +19,8 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
-    Size size = MediaQuery.of(context)
-        .size; // providing the total heignt and width of the screen.
+    // Size size = MediaQuery.of(context).size;
+    // providing the total heignt and width of the screen.
     return Scaffold(
       body: Container(
           // height: size.height,
