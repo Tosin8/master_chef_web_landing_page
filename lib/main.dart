@@ -19,11 +19,16 @@ class LandingPage extends StatelessWidget {
     Size size = MediaQuery.of(context)
         .size; // providing the total heignt and width of the screen.
     return Container(
-      height: size.height,
-      width: size.width,
-      decoration: const BoxDecoration(
+        height: size.height,
+        width: size.width,
+        decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover)),
-    );
+              image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover),
+        ),
+        child: Column(
+          children: [
+            MyAppNav(),
+          ],
+        ));
   }
 }
