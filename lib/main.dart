@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'component/landing_page/appbar.dart';
+
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -18,17 +20,19 @@ class LandingPage extends StatelessWidget {
     // ignore: non_constant_identifier_names
     Size size = MediaQuery.of(context)
         .size; // providing the total heignt and width of the screen.
-    return Container(
-        height: size.height,
-        width: size.width,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover),
-        ),
-        child: Column(
-          children: [
-            MyAppNav(),
-          ],
-        ));
+    return Scaffold(
+      body: Container(
+          // height: size.height,
+          // width: size.width,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/bkdg.jpg'), fit: BoxFit.cover),
+          ),
+          child: Column(
+            children: const  [
+              MyAppNav(),
+            ],
+          )),
+    );
   }
 }

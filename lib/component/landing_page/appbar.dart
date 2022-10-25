@@ -1,36 +1,73 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/constant.dart';
+
 class MyAppNav extends StatelessWidget {
   const MyAppNav({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Image.asset('assets/images/logo.png'),
-        const SizedBox(width: 40),
-        Container(
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        children: [
+          Image.asset('assets/images/logo.png'),
+          const Text(
+            'MasterChef',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
             ),
-            child: Padding(
+          ),
+          const SizedBox(width: 20),
+          Container(
+              height: 60,
+              width: 900,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, -2),
+                    blurRadius: 30,
+                    color: Colors.black.withOpacity(.16),
+                  ),
+                ],
+              ),
+              child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      MyNav(name: 'Home'),
-                      MyNav(name: 'About'),
-                      MyNav(name: 'Pricing'),
-                      MyNav(name: 'Meals'),
-                      MyNav(name: 'Location'),
-                      MyNav(name: 'Contact'),
-                      SizedBox(width: 10),
-                      Btn(name: 'Get Started'),
-                    ]))),
-      ],
+                    children: [
+                      const SizedBox(width: 6),
+                      const MyNav(name: 'Home'),
+                      const MyNav(name: 'About'),
+                      const MyNav(name: 'Pricing'),
+                      const MyNav(name: 'Meals'),
+                      const MyNav(name: 'Location'),
+                      const MyNav(name: 'Contact'),
+                      const SizedBox(width: 10),
+                      TextButton(
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all(kPrimaryColor),
+                        ),
+                        onPressed: () {},
+                        child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 10),
+                            child: Text('Get Started'.toUpperCase())),
+                      ),
+                      const SizedBox(width: 6),
+                    ]),
+              )),
+        ],
+      ),
     );
   }
 }
@@ -57,35 +94,6 @@ class MyNav extends StatelessWidget {
           fontSize: 20,
           fontWeight: FontWeight.bold,
           color: Colors.black,
-        ),
-      ),
-    );
-  }
-}
-
-class Btn extends StatelessWidget {
-  const Btn({Key? key, required this.name}) : super(key: key);
-
-  final String name;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // ignore: avoid_print
-        (print('Get Started'));
-      },
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: const Color.fromARGB(255, 211, 163, 18)),
-        child: Text(
-          name,
-          style: const TextStyle(
-            fontSize: 20,
-            color: Colors.white60,
-            fontWeight: FontWeight.bold,
-          ),
         ),
       ),
     );
